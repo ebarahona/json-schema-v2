@@ -92,17 +92,16 @@ angular.module('jsonschemaV4App')
                 var key = obj['__key__'];
                 for (var k in obj)
                 {
-                    var property = obj[k];
                     
-                    if (typeof property == "object" && property !== null) {
+                    if (typeof obj[k] == "object" && obj[k] !== null) {
                         // User removed schema.
-                        if (property.__removed__) {
+                        if (obj[k].__removed__) {
                             // Will delete all sub-schemas, which we want.
-                            delete property;
+                            delete obj[k];
                             continue;
                         }
                         // Recursive call parsing in sub-schema.
-                        this.clean(property);
+                        this.clean(obj[k]);
                     }
 
                     //else {
