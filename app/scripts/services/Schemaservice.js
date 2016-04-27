@@ -48,7 +48,7 @@ angular.module('jsonschemaV4App')
                 try {
                     // Convert JSON string to JavaScript object.
                     self.json = angular.fromJson(user_defined_options.json);
-                    console.log(self.json);
+                    // console.log(self.json);
                     /*
                     * Construct our own, custom, intermediate format that
                     * represents the hierarchy of parent / child schemas but
@@ -111,7 +111,7 @@ angular.module('jsonschemaV4App')
                         */
                         case '__required__':
                             var isRequired = obj[k];
-                            console.log('getSchema('+obj.__parent__+')');
+                            // console.log('getSchema('+obj.__parent__+')');
                             var parentSchema = self.getSchema(obj.__parent__);
                             if (parentSchema) {
 
@@ -128,9 +128,9 @@ angular.module('jsonschemaV4App')
                                     if (parentSchema.required) {
                                         var index = parentSchema.required.indexOf(key);
                                         if (index > -1) {
-                                            console.log(key);
+                                            // console.log(key);
                                             parentSchema.required.splice(index, 1);
-                                            console.log(parentSchema.required);
+                                            // console.log(parentSchema.required);
                                         }
                                     }
                                 }
@@ -496,7 +496,7 @@ angular.module('jsonschemaV4App')
 
             this.getSchemaById = function(obj, id) {
 
-                console.log("object: " + obj.__key__ + ', ' + typeof obj);
+                // console.log("object: " + obj.__key__ + ', ' + typeof obj);
 
                 for (var k in obj)
                 {
@@ -507,7 +507,7 @@ angular.module('jsonschemaV4App')
                     switch (String(k)) {
                         case 'id':
                             if (String(obj[k]) == String(id)) {
-                                console.log('found: ' + obj.__key__);
+                                // console.log('found: ' + obj.__key__);
                                 return  obj;
                             }
                     }
