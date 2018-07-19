@@ -2,7 +2,7 @@
   "name": "jsonschemav4",
   "version": "0.0.0",
   "dependencies": {
-    "jpegtran-bin": "0.2.0"
+    "jpegtran-bin": "0.2.1"
   },
   "devDependencies": {
     "grunt": "^0.4.5",
